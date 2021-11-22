@@ -39,4 +39,12 @@ public class TDDSetTest {
         assertTrue(set.contains(1));
     }
 
+    @Test
+    @DisplayName("should return false when element doesnt exists")
+    void shouldReturnFalseWhenElementDoesntExists () {
+        TDDSet<Object> set = new TDDSet<>();
+        set.add(1);
+        assertFalse(set.contains(2));
+    }
+
 }
