@@ -47,4 +47,13 @@ public class TDDSetTest {
         assertFalse(set.contains(2));
     }
 
+    @Test
+    @DisplayName("should not exist when removed ")
+    void shouldNotExistWhenRemoved () {
+        TDDSet<Object> set = new TDDSet<>();
+        set.add(1);
+        set.remove(1);
+        assertFalse(set.contains(1));
+    }
+
 }

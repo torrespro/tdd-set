@@ -30,4 +30,8 @@ public class TDDSet<T> {
         }
         return false;
     }
+
+    public boolean remove(T element) {
+        return false;
+    }
 }
