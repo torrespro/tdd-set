@@ -75,4 +75,19 @@ public class TDDSetTest {
         set.add(1);
         assertNotEquals(set.size(), 2);
     }
+
+    @Test
+    @DisplayName("should skip deletion when empty")
+    void shouldSkipDeletionWhenEmpty () {
+        TDDSet<Object> set = new TDDSet<>();
+        assertFalse(set.remove(1));
+    }
+
+    @Test
+    @DisplayName("should skip deletion when not found")
+    void shouldSkipDeletionWhenNotFound () {
+        TDDSet<Object> set = new TDDSet<>();
+        set.add(1);
+        assertFalse(set.remove(2));
+    }
 }
