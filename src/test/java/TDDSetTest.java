@@ -1,5 +1,6 @@
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.DisplayName;
@@ -66,4 +67,12 @@ public class TDDSetTest {
         assertTrue(set.isEmpty());
     }
 
+    @Test
+    @DisplayName("should keep only one when inserting duplicates")
+    void shouldKeepOnlyOneWhenInsertingDuplicates () {
+        TDDSet<Object> set = new TDDSet<>();
+        set.add(1);
+        set.add(1);
+        assertNotEquals(set.size(), 2);
+    }
 }
