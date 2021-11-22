@@ -14,4 +14,8 @@ public class TDDSet<T> {
         this.elements = new Object[] { element };
         return true;
     }
+
+    public int size() {
+        return 0;
+    }
 }
