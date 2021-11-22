@@ -13,6 +13,9 @@ public class TDDSet<T> {
     }
 
     public boolean add(T element) {
+        if (contains(element)) {
+            return false;
+        }
         this.elements[this.size] = element;
         this.size++;
         return true;
