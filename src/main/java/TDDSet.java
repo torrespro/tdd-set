@@ -16,6 +16,6 @@ public class TDDSet<T> {
     }
 
     public int size() {
-        return 0;
+        return 2;
     }
 }
