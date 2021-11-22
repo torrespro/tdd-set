@@ -50,7 +50,7 @@ public class TDDSet<T> {
     public boolean remove(T element) {
         int index = getIndex(element);
         if (index != -1) {
-            this.elements[index] = null;
+            System.arraycopy(this.elements, index + 1, this.elements, index, this.elements.length - 1 - index);
             this.size--;
             return true;
         }
