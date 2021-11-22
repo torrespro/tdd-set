@@ -35,6 +35,7 @@ public class TDDSet<T> {
         for (int i = 0; i < this.elements.length; i++) {
             if (element == this.elements[i]) {
                 this.elements[i] = null;
+                this.size--;
                 return true;
             }
         }

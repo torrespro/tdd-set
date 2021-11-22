@@ -48,12 +48,22 @@ public class TDDSetTest {
     }
 
     @Test
-    @DisplayName("should not exist when removed ")
-    void shouldNotExistWhenRemoved () {
+    @DisplayName("should not exist and be empty when removed ")
+    void shouldNotExistAndBeEmptyWhenRemoved () {
         TDDSet<Object> set = new TDDSet<>();
         set.add(1);
         set.remove(1);
         assertFalse(set.contains(1));
+        assertTrue(set.isEmpty());
+    }
+
+    @Test
+    @DisplayName("should return true when add and then remove ")
+    void shouldReturnTrueWhenAddAndThenRemove () {
+        TDDSet<Object> set = new TDDSet<>();
+        set.add(1);
+        set.remove(1);
+        assertTrue(set.isEmpty());
     }
 
 }
