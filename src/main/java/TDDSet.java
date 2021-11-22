@@ -26,21 +26,27 @@ public class TDDSet<T> {
     }
 
     public boolean contains(T element) {
-        for (int i = 0; i < this.elements.length; i++) {
-            if (element == this.elements[i]) {
-                return true;
-            }
+        if (getIndex(element) != -1) {
+            return true;
         }
         return false;
     }
 
-    public boolean remove(T element) {
+    private int getIndex(T element) {
         for (int i = 0; i < this.elements.length; i++) {
             if (element == this.elements[i]) {
-                this.elements[i] = null;
-                this.size--;
-                return true;
+                return i;
             }
+        }
+        return -1;
+    }
+
+    public boolean remove(T element) {
+        int index = getIndex(element);
+        if (index != -1) {
+            this.elements[index] = null;
+            this.size--;
+            return true;
         }
         return false;
     }
