@@ -21,4 +21,8 @@ public class TDDSet<T> {
     public int size() {
         return size;
     }
+
+    public boolean contains(T element) {
+        return false;
+    }
 }

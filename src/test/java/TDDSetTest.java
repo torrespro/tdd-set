@@ -30,5 +30,13 @@ public class TDDSetTest {
         set.add(2);
         assertEquals(2,set.size());
     }
+    
+    @Test
+    @DisplayName("should return true when element exists")
+    void shouldReturnTrueWhenElementExists () {
+        TDDSet<Object> set = new TDDSet<>();
+        set.add(1);
+        assertTrue(set.contains(1));
+    }
 
 }
