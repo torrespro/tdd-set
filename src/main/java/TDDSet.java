@@ -23,6 +23,11 @@ public class TDDSet<T> {
     }
 
     public boolean contains(T element) {
-        return true;
+        for (int i = 0; i < this.elements.length; i++) {
+            if (element == this.elements[i]) {
+                return true;
+            }
+        }
+        return false;
     }
 }
