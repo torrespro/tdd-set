@@ -32,6 +32,12 @@ public class TDDSet<T> {
     }
 
     public boolean remove(T element) {
+        for (int i = 0; i < this.elements.length; i++) {
+            if (element == this.elements[i]) {
+                this.elements[i] = null;
+                return true;
+            }
+        }
         return false;
     }
 }
