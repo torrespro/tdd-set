@@ -90,4 +90,14 @@ public class TDDSetTest {
         set.add(1);
         assertFalse(set.remove(2));
     }
+
+    @Test
+    @DisplayName("should grow when adding more than size")
+    void shouldGrowWhenAddingMoreThanSize () {
+        TDDSet<Object> set = new TDDSet<Object>();
+        for (int i = 0; i < 12; i++) {
+            set.add(i);
+        }
+        assertEquals(set.size(), 11);
+    }
 }
