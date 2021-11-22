@@ -95,9 +95,9 @@ public class TDDSetTest {
     @DisplayName("should grow when adding more than size")
     void shouldGrowWhenAddingMoreThanSize () {
         TDDSet<Object> set = new TDDSet<Object>();
-        for (int i = 0; i < 12; i++) {
+        for (int i = 0; i < 11; i++) {
             set.add(i);
         }
-        assertEquals(set.size(), 11);
+        assertEquals(11, set.size());
     }
 }

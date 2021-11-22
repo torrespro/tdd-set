@@ -1,10 +1,13 @@
+import java.util.Arrays;
+
 public class TDDSet<T> {
 
+    public static final int INITIAL_SIZE = 10;
     private Object[] elements;
     private int size;
 
     public TDDSet() {
-        this.elements = new Object[10];
+        this.elements = new Object[INITIAL_SIZE];
         this.size = 0;
     }
 
@@ -13,6 +16,9 @@ public class TDDSet<T> {
     }
 
     public boolean add(T element) {
+        if (this.size == INITIAL_SIZE) {
+            this.elements = Arrays.copyOf(this.elements, this.size + INITIAL_SIZE);
+        }
         if (contains(element)) {
             return false;
         }
