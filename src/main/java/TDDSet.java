@@ -23,6 +23,6 @@ public class TDDSet<T> {
     }
 
     public boolean contains(T element) {
-        return false;
+        return true;
     }
 }
